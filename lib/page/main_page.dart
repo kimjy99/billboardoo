@@ -4,7 +4,6 @@ import 'package:billboardoo/data/constant.dart';
 import 'package:billboardoo/data/music.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
@@ -22,7 +21,6 @@ class _MainPageState extends State<MainPage> {
   List<int> ids = [];
   String date = "";
   int selected = 0;
-  bool dateOn = false;
 
   @override
   void initState() {
@@ -34,12 +32,10 @@ class _MainPageState extends State<MainPage> {
 
   _loadMusics() async {
     final response = await http.get(jsonUrl + "music?_limit=100" + (selected == 0 ? "" : "&_sort=incRank"));
-    var statusCode = response.statusCode;
+    // var statusCode = response.statusCode;
     var responseBody = utf8.decode(response.bodyBytes);
-    print("statusCode: $statusCode");
 
     List<dynamic> list = jsonDecode(responseBody);
-
     setState(() {
       musics = [];
       for (dynamic music in list) {
@@ -51,9 +47,8 @@ class _MainPageState extends State<MainPage> {
 
   _loadUpdateDate() async {
     final response = await http.get(jsonUrl + "update");
-    var statusCode = response.statusCode;
+    // var statusCode = response.statusCode;
     var responseBody = utf8.decode(response.bodyBytes);
-    print("statusCode: $statusCode");
 
     dynamic d = jsonDecode(responseBody);
     setState(() {
@@ -74,15 +69,15 @@ class _MainPageState extends State<MainPage> {
         ),
         toolbarHeight: 70,
         actions: [
-          CupertinoButton(
-            onPressed: () {
-              setState(() {
-                dateOn = !dateOn;
-              });
-            },
+          Padding(
+            padding: const EdgeInsets.all(15),
             child: Text(
               date,
-              style: TextStyle(color: dateOn ? Colors.white : Colors.black),
+              style: const TextStyle(
+                color: Color(0xddffffff),
+                fontFamily: "BlackHanSans",
+                fontSize: 30,
+              ),
             ),
           ),
         ],
