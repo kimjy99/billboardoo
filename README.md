@@ -46,7 +46,7 @@ cp ~/my-json-server/db.json ~/my-json-server/db_backup.json
 python3 ~/my-json-server/updatejson.py --show=True > ~/my-json-server/log.txt
 /usr/local/bin/forever restartall
 ``` 
-4. How `updatejson.py` updates Youtube views in `db.json`.
+4. How `updatejson.py` updates Youtube views in `db.json`:
 ```
 from bs4 import BeautifulSoup
 import requests
