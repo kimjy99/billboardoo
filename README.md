@@ -37,7 +37,7 @@ forever start /usr/local/bin/json-server ~/my-json-server/db.json --port 3001 -H
 ```
 59 * * * * ~/my-json-server/update_every_hour.sh > ~/my-json-server/cron_result.txt 2>&1
 ```
-3. The bash file backups `db.json`, updates `db.json` by python file `updatejson.py`, and restart `forever`  
+3. The shell script file backups `db.json`, updates `db.json` by python file `updatejson.py`, and restart `forever`  
    It is necessary to restart `forever` because `json-server` sends the old `db.json` file to web page even though `updatejson.py` updates `db.json`.
 ```
 #!/bin/bash
