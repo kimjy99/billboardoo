@@ -1,20 +1,26 @@
 # Billboardoo Chart
-[Web Page Link](http://138.2.119.187/#/)
+[우왁굳](https://www.youtube.com/user/woowakgood) 과 [왁타버스](https://www.youtube.com/c/welshcorgimessi) (이세계아이돌, 고멤 등)에 관련된 유튜브 영상들의 조회수 순위를 매긴 웹페이지입니다.  
+1시간 마다 차트가 자동으로 업데이트 됩니다.  
+  
+Youtube Views Chart for musics about [woowakgood](https://www.youtube.com/user/woowakgood) and [WAKTAVERSE](https://www.youtube.com/c/welshcorgimessi).  
+Chart is automatically updated every hour.  
+  
+링크: [Web Page Link](http://138.2.119.187/#/)  
 
 #### Current Views (누적)
-Show ranking for views
+Show ranking of Youtube views
 <p align="center">
   <img src="./screenshot/main.PNG" style="width:500px;"/>
 </p>
 
 #### Real-time Views (실시간)
-Show ranking for views last 1 hour
+Show ranking of views for last 1 hour
 <p align="center">
   <img src="./screenshot/realtime.PNG" style="width:500px;"/>
 </p>
 
 #### Details
-Click music to see details. You can see release date, composer, and Youtube links of original song and its reaction (if it exists).
+Click music to see details. You can see release date, composer, and Youtube links of original music and its reaction (if it exists).
 <p align="center">
   <img src="./screenshot/main2.PNG" style="width:500px;"/>
 </p>
