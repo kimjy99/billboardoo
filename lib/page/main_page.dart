@@ -20,17 +20,20 @@ class _MainPageState extends State<MainPage> {
 
   List<Music> musics = [];
   List<int> ids = [];
+  String date = "";
   int selected = 0;
+  bool dateOn = false;
 
   @override
   void initState() {
     super.initState();
     _textEditingController = TextEditingController();
     _loadMusics();
+    _loadUpdateDate();
   }
 
   _loadMusics() async {
-    final response = await http.get(jsonUrl + (selected == 0 ? "" : "&_sort=incRank"));
+    final response = await http.get(jsonUrl + "music?_limit=100" + (selected == 0 ? "" : "&_sort=incRank"));
     var statusCode = response.statusCode;
     var responseBody = utf8.decode(response.bodyBytes);
     print("statusCode: $statusCode");
@@ -46,6 +49,18 @@ class _MainPageState extends State<MainPage> {
     });
   }
 
+  _loadUpdateDate() async {
+    final response = await http.get(jsonUrl + "update");
+    var statusCode = response.statusCode;
+    var responseBody = utf8.decode(response.bodyBytes);
+    print("statusCode: $statusCode");
+
+    dynamic d = jsonDecode(responseBody);
+    setState(() {
+      date = d['date'];
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,6 +73,19 @@ class _MainPageState extends State<MainPage> {
           ),
         ),
         toolbarHeight: 70,
+        actions: [
+          CupertinoButton(
+            onPressed: () {
+              setState(() {
+                dateOn = !dateOn;
+              });
+            },
+            child: Text(
+              date,
+              style: TextStyle(color: dateOn ? Colors.white : Colors.black),
+            ),
+          ),
+        ],
       ),
       body: Column(
         children: [
