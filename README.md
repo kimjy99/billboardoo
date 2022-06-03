@@ -82,7 +82,7 @@ def updateJSON(data, showlog = False):
         d['view'] = getView(d['url'], showlog)
         d['viewInc'] = d['view'] - view
 
-        if (len(d['url2']) > 0) :
+        if (len(d['url2']) > 0):
             if showlog: print(" / ", end="")
             view = d['view2']
             d['view2'] = getView(d['url2'], showlog)
