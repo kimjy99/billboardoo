@@ -28,7 +28,7 @@ Click music to see details. You can see release date, composer, and Youtube link
   <img src="./screenshot/main2.PNG" style="width:500px;"/>
 </p>
 
-### How ranking updates every hour
+### How the chart updates every hour
 1. Use `forever` to run `json-server` 24 hours
 ```
 forever start /usr/local/bin/json-server ~/my-json-server/db.json --port 3001 -H 0.0.0.0
