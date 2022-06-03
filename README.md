@@ -33,7 +33,7 @@ Click music to see details. You can see release date, composer, and Youtube link
 ```
 forever start /usr/local/bin/json-server ~/my-json-server/db.json --port 3001 -H 0.0.0.0
 ```
-2. Use `crontab` to run bash file `update_every_hour.sh` every hour
+2. Use `crontab` to run shell script file `update_every_hour.sh` every hour
 ```
 59 * * * * ~/my-json-server/update_every_hour.sh > ~/my-json-server/cron_result.txt 2>&1
 ```
