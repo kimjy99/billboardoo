@@ -7,25 +7,28 @@ Chart is automatically updated every hour.
   
 링크: [Web Page Link](http://138.2.119.187/#/)  
 
-#### Current Views (누적)
-Show ranking of Youtube views
+### Current Views (누적)
+누적 조회수에 대한 차트  
+Show current chart of views  
 <p align="center">
   <img src="./screenshot/main.PNG" style="width:500px;"/>
 </p>
 
-#### Real-time Views (실시간)
-Show ranking of views for last 1 hour
+### Real-time Views (실시간)
+1시간 동안 증가한 조회수에 대한 차트  
+Show real-time chart of views for last 1 hour  
 <p align="center">
   <img src="./screenshot/realtime.PNG" style="width:500px;"/>
 </p>
 
-#### Details
-Click music to see details. You can see release date, composer, and Youtube links of original music and its reaction (if it exists).
+### Details
+음악을 클릭하면 발매일, 제작자, 원본과 반응 영상 링크를 확인할 수 있습니다.  
+Click music to see details. You can see release date, composer, and Youtube links of original music and its reaction (if it exists).  
 <p align="center">
   <img src="./screenshot/main2.PNG" style="width:500px;"/>
 </p>
 
-#### How ranking updates every hour
+### How ranking updates every hour
 1. Use `forever` to run `json-server` 24 hours
 ```
 forever start /usr/local/bin/json-server ~/my-json-server/db.json --port 3001 -H 0.0.0.0
