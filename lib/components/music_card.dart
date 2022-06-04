@@ -87,7 +87,7 @@ class _MusicCardState extends State<MusicCard> {
                           style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                         ),
                         Text(
-                          '+${comma(widget.music.viewInc1 + widget.music.viewInc2)}',
+                          commaWithSign(widget.music.viewInc1 + widget.music.viewInc2),
                           style: const TextStyle(fontSize: 16),
                         ),
                       ],
@@ -173,6 +173,14 @@ class _MusicCardState extends State<MusicCard> {
     return NumberFormat('###,###,###').format(s);
   }
 
+  String commaWithSign(int s) {
+    if (s >= 0) {
+      return '+${comma(s)}';
+    } else {
+      return comma(s);
+    }
+  }
+
   Widget _buildDateCard() {
     return Padding(
       padding: const EdgeInsets.all(10),
@@ -240,7 +248,7 @@ class _MusicCardState extends State<MusicCard> {
               children: [
                 const SizedBox(width: 45),
                 Text(
-                  "+${comma(viewInc)}",
+                  commaWithSign(viewInc),
                   textAlign: TextAlign.right,
                   style: const TextStyle(fontSize: 12),
                 ),
